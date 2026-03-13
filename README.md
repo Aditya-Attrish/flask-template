@@ -65,6 +65,7 @@ flask-template/
 ├── .env.example
 ├── Dockerfile               # Multi-stage production image
 ├── docker-compose.yml       # App + PostgreSQL + Redis
+├── Makefile                 # Developer shortcuts
 ├── requirements.txt
 └── wsgi.py                  # Gunicorn entry point
 ```
@@ -72,6 +73,13 @@ flask-template/
 ---
 
 ## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.12+ — download from python.org
+- pip — comes with Python
+- Git — for cloning the repo
+- Docker (optional) — for running the full stack with one command
+
 
 ### 1. Clone & set up environment
 
@@ -170,8 +178,7 @@ GET /api/v1/health
 ## 🧪 Testing
 
 ```bash
-make test          # Run full suite
-make coverage      # Run with coverage report
+pytest tests/ -v          # Run full suite
 ```
 
 Tests use an **in-memory SQLite database** and are fully isolated — no external services required.
